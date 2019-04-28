@@ -24,6 +24,23 @@
 	function forgetPassword(){
 		alert("请联系网站管理员！");
 		}
+	
+	//用户输入非空判断
+	function check() {
+		if(form1.username.value==""){
+			alert("用户名不能为空！");
+			return false;
+		}
+		if(form1.password.value==""){
+			alert("密码不能为空！");
+			return false;
+		}
+		if(form1.checkcode.value==""){
+			alert("验证码不能为空！");
+			return false;
+		}
+	}
+	
 </script>
 <title>登陆</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -46,34 +63,34 @@
                 <div class="login-recommends">
                     <div class="recommends">
                         <a class="recommend" href="#" target="_blank">
-                            <div class="title">ResNet模型训练</div>
-                            <div class="desc">一键完成人工智能图片分类，开源算法</div>
-                            <div class="img"><img src="https://shenjianshou-web.oss-cn-beijing.aliyuncs.com/market/2291517_icon_mark.png" class="img-zoom" alt="" width="220" height="220"></div>
+                            <div class="title">功能介绍一</div>
+                            <div class="desc">详细介绍</div>
+                            <div class="img"><img src="images/school_01.png" class="img-zoom" alt="" width="220" height="220"></div>
                         </a>
                         <a class="recommend" href="#" target="_blank">
-                             <div class="title">ICP域名备案查询</div>
-                             <div class="desc">独创的人工智能自动识别验证码备案查询速度更快，费用更低！</div>
-                             <div class="img"><img src="https://shenjianshou-web.oss-cn-beijing.aliyuncs.com/market/1790143_icon.png" class="img-zoom" alt="" width="220" height="220"></div>
+                             <div class="title">功能介绍二</div>
+                             <div class="desc">详细介绍</div>
+                             <div class="img"><img src="images/school_02.jpg" class="img-zoom" alt="" width="220" height="220"></div>
                         </a>
                         <a class="recommend" href="#" target="_blank">
-                        	<div class="title">汽车之家口碑爬虫</div>
-                        	<div class="desc">一键采集汽车口碑数据自动解析CSS和字体 完美防屏蔽</div>
-                            <div class="img"><img src="https://shenjianshou-web.oss-cn-beijing.aliyuncs.com/market/817981_icon.png" class="img-zoom" alt="" width="220" height="220"></div>
+                        	<div class="title">功能介绍三</div>
+                        	<div class="desc">详细介绍</div>
+                            <div class="img"><img src="images/school_03.jpg" class="img-zoom" alt="" width="220" height="220"></div>
                         </a>
                         <a class="recommend" href="#" target="_blank">
-                            <div class="title">全球酒店数据[含经纬度]</div>
-                            <div class="desc">海量全球酒店大数据一键获取</div>
-                            <div class="img"><img src="https://shenjianshou-web.oss-cn-beijing.aliyuncs.com/market/792267_icon.png" class="img-zoom" alt="" width="220" height="220"></div>
+                            <div class="title">功能介绍四</div>
+                            <div class="desc">详细介绍</div>
+                            <div class="img"><img src="images/school_04.jpg" class="img-zoom" alt="" width="220" height="220"></div>
                         </a>
                         <a class="recommend" href="#" target="_blank">
-                        	<div class="title">生活服务类查询接口</div>
-                        	<div class="desc">天气、快递、驾照、油价、公交等查询生活服务类API接口，重磅上线！</div>
-                            <div class="img"><img src="https://shenjianshou-web.oss-cn-beijing.aliyuncs.com/market/938290_icon.png" class="img-zoom" alt="" width="220" height="220"></div>
+                        	<div class="title">功能介绍五</div>
+                        	<div class="desc">详细介绍</div>
+                            <div class="img"><img src="images/school_05.jpg" class="img-zoom" alt="" width="220" height="220"></div>
                         </a>
                         <a class="recommend" href="#" target="_blank">
-                            <div class="title">亚马逊/外贸商品爬虫</div>
-                            <div class="desc">支持多个国家，外贸数据分析优秀工具</div>
-                            <div class="img"><img src="https://shenjianshou-web.oss-cn-beijing.aliyuncs.com/market/523687_icon_mark.png" class="img-zoom" alt="" width="220" height="220"></div>
+                            <div class="title">功能介绍六</div>
+                            <div class="desc">详细介绍</div>
+                            <div class="img"><img src="images/school_06.jpg" class="img-zoom" alt="" width="220" height="220"></div>
                         </a>
                      </div>
                     <ul class="indicators">
@@ -91,7 +108,7 @@
                     <div class="login-title">
                        	 登录系统
                     </div>
-                    <form id="login-form" role="form" action="${pageContext.request.contextPath }/loginAction_login"  method="POST">
+                    <form id="login-form" name="form1" role="form" onsubmit="return check()" action="${pageContext.request.contextPath }/loginAction_login"  method="POST">
                         <div class="form-group">
                             <div class="label-tip">
                                 <h5 class="input-label">账号: </h5>

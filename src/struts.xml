@@ -15,7 +15,7 @@
 		</global-exception-mappings> -->
 		 <!-- 配置action-->
 		<action name="loginAction_*" class="loginAction" method="{1}" >
-			<result name="success" type="redirect" >/success.html</result>
+			<result name="success" type="redirect" >/admin.jsp</result>
 			<result name="error" >/index.jsp</result>
 		</action>
 	</package>
