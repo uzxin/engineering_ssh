@@ -34,6 +34,7 @@ public class LoginServiceImpl implements LoginService {
 		Transaction tx = sf.openSession().beginTransaction();
 		Student stu = studentDao.getStudentByUsername(username);
 		tx.commit();
+		sf.openSession().close();
 		return stu;
 	}
 
@@ -42,6 +43,7 @@ public class LoginServiceImpl implements LoginService {
 		Transaction tx = sf.openSession().beginTransaction();
 		Teacher tea = teacherDao.getTeacherByUsername(username);
 		tx.commit();
+		sf.openSession().close();
 		return tea;
 	}
 
@@ -50,6 +52,7 @@ public class LoginServiceImpl implements LoginService {
 		Transaction tx = sf.openSession().beginTransaction();
 		Admin admin = adminDao.getAdminByUsername(username);
 		tx.commit();
+		sf.openSession().close();
 		return admin;
 	}
 }

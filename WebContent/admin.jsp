@@ -16,8 +16,8 @@
   <div class="logo margin-big-left fadein-top">
     <h1 style="color: black"><img src="admin/logo.png" class="radius-circle rotate-hover" alt="" height="50">课程过程化考核管理系统</h1>
   </div>
-  <div class="head-l"><a class="button button-little bg-green" href="#">个人信息</a>  &nbsp;&nbsp;
-  	<a class="button button-little bg-red" href="#">
+  <div class="head-l"><a class="button button-little bg-green" href="#">${identity.username }</a>  &nbsp;&nbsp;
+  	<a class="button button-little bg-red" href="loginAction_exit()">
   		<span class="icon-power-off"></span> 退出登录</a> </div>
 </div>
 <div class="leftnav">
@@ -29,18 +29,28 @@
  		</ul>
     <h2 class=""><span class="icon-pencil-square-o"></span>课程管理</h2>
     	<ul>
-    		<li><a href="javascript:void(0);" target="right"><span class="icon-caret-right"></span>开发中</a></li> 
+    		<li><a href="${pageContext.request.contextPath }/courseAction_getAllCourse" target="right"><span class="icon-caret-right"></span>课程列表</a></li> 
+    		<li><a href="${pageContext.request.contextPath }/addCourse.jsp" target="right"><span class="icon-caret-right"></span>添加课程</a></li> 
     	</ul>
     <h2 class=""><span class="icon-pencil-square-o"></span>教师管理</h2>
  		<ul style="display: none;">
-    		<li><a href="javascript:void(0);" target="right"><span class="icon-caret-right"></span>开发中</a></li> 
+    		<li><a href="${pageContext.request.contextPath }/teacherAction_getAllTeacher" target="right"><span class="icon-caret-right"></span>教师列表</a></li> 
+  			<li><a href="${pageContext.request.contextPath }/addTeacher.jsp" target="right"><span class="icon-caret-right"></span>添加教师</a></li>
   		</ul>  
   	<h2 class=""><span class="icon-pencil-square-o"></span>学生管理</h2>
     	<ul style="display: none;">
-    		<li><a href="javascript:void(0);" target="right"><span class="icon-caret-right"></span>开发中</a></li>  
+    		<li><a href="${pageContext.request.contextPath }/studentAction_getAllStudent" target="right"><span class="icon-caret-right"></span>学生列表</a></li>  
+     		<li><a href="${pageContext.request.contextPath }/addStudent.jsp" target="right"><span class="icon-caret-right"></span>添加学生</a></li>
+     	</ul>
+     <h2 class=""><span class="icon-pencil-square-o"></span>选课管理</h2>
+    	<ul style="display: none;">
+    		<li><a href="${pageContext.request.contextPath }/courseSelectAction_getAllTC" target="right"><span class="icon-caret-right"></span>教师选课管理</a></li>
+    		<li><a href="${pageContext.request.contextPath }/courseSelectAction_getAllSC" target="right"><span class="icon-caret-right"></span>学生选课管理</a></li>
      	</ul>
   	<h2 class=""><span class="icon-pencil-square-o"></span>系统维护</h2>
     	<ul style="display: none;">
+     		<li><a href="javascript:void(0);" target="right"><span class="icon-caret-right"></span>查看用户登陆日志</a></li>   
+     		<li><a href="javascript:void(0);" target="right"><span class="icon-caret-right"></span>发布公告</a></li>   
      		<li><a href="javascript:void(0);" target="right"><span class="icon-caret-right"></span>开发中</a></li>   
     	</ul>  
 </div>

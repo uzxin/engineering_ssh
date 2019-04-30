@@ -1,5 +1,6 @@
 package com.dao.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.Criteria;
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import com.dao.TCDao;
 import com.domain.TC;
+import com.domain.Teacher;
 @Repository
 @Transactional
 public class TCDaoImpl extends HibernateDaoSupport implements TCDao {
@@ -57,6 +59,19 @@ public class TCDaoImpl extends HibernateDaoSupport implements TCDao {
 		Session session = getSessionFactory().getCurrentSession();
 		Criteria criteria = session.createCriteria(TC.class);
 		return criteria.list();
+	}
+
+	//通过选课表查询教师名字
+	public List<Teacher> getTeacher(List<TC> tcList) {
+		Session session = getSessionFactory().getCurrentSession();
+		List<Teacher> list = new ArrayList<>();
+		for (TC tc : tcList) {
+			Criteria criteria = session.createCriteria(Teacher.class);
+			criteria.add(Restrictions.eq("tid", tc.getTid()));
+			Teacher teacher = (Teacher) criteria.uniqueResult();
+			list.add(teacher);
+		}
+		return list;
 	}
 
 }

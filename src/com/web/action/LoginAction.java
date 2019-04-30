@@ -75,8 +75,13 @@ public class LoginAction extends ActionSupport{
 			}
 		}
 	}
-
 	
+	//退出登录
+	public String exit() throws Exception {
+		// TODO Auto-generated method stub
+		return "error";
+	}
+
 	public String getCheckcode() {
 		return checkcode;
 	}

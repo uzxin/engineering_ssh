@@ -12,7 +12,7 @@ public interface TeacherDao {
 	//修改教师信息
 	void updateTeacher(Teacher teacher);
 	//查找教师
-	Teacher getTeacherByTid(Integer sid);
+	Teacher getTeacherByTid(Integer tid);
 	Teacher getTeacherByUsername(String username);
 	Teacher getTeacherByUsernamePassword(String username,String password);
 	Teacher getTeacherByRealname(String realname);

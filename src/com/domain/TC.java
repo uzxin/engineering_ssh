@@ -24,7 +24,7 @@ public class TC {
 	}
 	@Override
 	public String toString() {
-		return "Teancher_course [id=" + id + ", tid=" + tid + ", cid=" + cid + "]";
+		return "Teacher_course [id=" + id + ", tid=" + tid + ", cid=" + cid + "]";
 	}
 	
 	

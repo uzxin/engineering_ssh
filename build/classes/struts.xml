@@ -18,6 +18,33 @@
 			<result name="success" type="redirect" >/admin.jsp</result>
 			<result name="error" >/index.jsp</result>
 		</action>
+		<action name="courseAction_*" class="courseAction" method="{1}" >
+			<result name="toCourse" >course.jsp</result>
+			<result name="toCourseList" type="redirectAction">
+				<param name="actionName">courseAction_getAllCourse</param>
+				<param name="namespace">/</param>
+			</result>
+			<result name="toEdit" >editCourse.jsp</result>
+		</action>
+		<action name="teacherAction_*" class="teacherAction" method="{1}" >
+			<result name="toTeacher">teacher.jsp</result>
+			<result name="toTeacherList" type="redirectAction">
+				<param name="actionName">teacherAction_getAllTeacher</param>
+				<param name="namespace">/</param>
+			</result>
+			<result name="toEdit" >editTeacher.jsp</result>
+		</action>
+		<action name="studentAction_*" class="studentAction" method="{1}" >
+			<result name="toStudent">student.jsp</result>
+			<result name="toStudentList" type="redirectAction">
+				<param name="actionName">studentAction_getAllStudent</param>
+				<param name="namespace">/</param>
+			</result>
+			<result name="toEdit" >editStudent.jsp</result>
+		</action>
+		<action name="courseSelectAction_*" class="courseSelectAction" method="{1}">
+			<result name="toCourseSelect">courseSelect.jsp</result>
+		</action>
 	</package>
 </struts>
 	

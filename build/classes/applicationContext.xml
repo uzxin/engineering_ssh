@@ -29,8 +29,8 @@
 				<!--  必选配置 -->
 				<prop key="hibernate.dialect" >org.hibernate.dialect.MySQLDialect</prop>
 				<!--  可选配置 -->
-				<prop key="hibernate.show_sql" >true</prop>
-				<prop key="hibernate.format_sql" >true</prop>
+				<!-- <prop key="hibernate.show_sql" >true</prop>
+				<prop key="hibernate.format_sql" >true</prop> -->
 				<prop key="hibernate.hbm2ddl.auto" >update</prop>
 			</props>
 		</property>
@@ -47,6 +47,18 @@
 	<bean name="loginAction" class="com.web.action.LoginAction" scope="prototype" >
 		<property name="loginService" ref="loginService" ></property>
 	</bean>
+	<bean name="courseAction" class="com.web.action.CourseAction" scope="prototype" >
+		<property name="courseService" ref="courseService" ></property>
+	</bean>
+	<bean name="teacherAction" class="com.web.action.TeacherAction" scope="prototype" >
+		<property name="teacherService" ref="teacherService" ></property>
+	</bean>
+	<bean name="studentAction" class="com.web.action.StudentAction" scope="prototype" >
+		<property name="studentService" ref="studentService" ></property>
+	</bean>
+	<bean name="courseSelectAction" class="com.web.action.CourseSelectAction" scope="prototype" >
+		<property name="courseSelectService" ref="courseSelectService" ></property>
+	</bean>
 	
 	<!-- service层 -->
 	<bean name="loginService" class="com.service.impl.LoginServiceImpl" >
@@ -54,6 +66,23 @@
 		<property name="adminDao" ref="adminDao"></property>
 		<property name="studentDao" ref="studentDao"></property>
 		<property name="teacherDao" ref="teacherDao"></property>
+	</bean>
+	<bean name="courseService" class="com.service.impl.CourseServiceImpl" >
+		<property name="sf" ref="sessionFactory" ></property>
+		<property name="courseDao" ref="courseDao"></property>
+	</bean>
+	<bean name="teacherService" class="com.service.impl.TeacherServiceImpl" >
+		<property name="sf" ref="sessionFactory" ></property>
+		<property name="teacherDao" ref="teacherDao"></property>
+	</bean>
+	<bean name="studentService" class="com.service.impl.StudentServiceImpl" >
+		<property name="sf" ref="sessionFactory" ></property>
+		<property name="studentDao" ref="studentDao"></property>
+	</bean>
+	<bean name="courseSelectService" class="com.service.impl.CourseSelectServiceImpl" >
+		<property name="sf" ref="sessionFactory" ></property>
+		<property name="scDao" ref="scDao"></property>
+		<property name="tcDao" ref="tcDao"></property>
 	</bean>
 	
 	
