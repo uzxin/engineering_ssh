@@ -10,6 +10,7 @@ import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import com.dao.TCDao;
+import com.domain.Course;
 import com.domain.TC;
 import com.domain.Teacher;
 @Repository
@@ -56,20 +57,33 @@ public class TCDaoImpl extends HibernateDaoSupport implements TCDao {
 
 	//查看所有教师所有课程的选课情况
 	public List<TC> getALLTC() {
-		Session session = getSessionFactory().getCurrentSession();
+		Session session = getSessionFactory().openSession();
 		Criteria criteria = session.createCriteria(TC.class);
 		return criteria.list();
 	}
 
 	//通过选课表查询教师名字
 	public List<Teacher> getTeacher(List<TC> tcList) {
-		Session session = getSessionFactory().getCurrentSession();
+		Session session = getSessionFactory().openSession();
 		List<Teacher> list = new ArrayList<>();
 		for (TC tc : tcList) {
 			Criteria criteria = session.createCriteria(Teacher.class);
 			criteria.add(Restrictions.eq("tid", tc.getTid()));
 			Teacher teacher = (Teacher) criteria.uniqueResult();
 			list.add(teacher);
+		}
+		return list;
+	}
+
+	//通过选课表查询课程名字
+	public List<Course> getCourse(List<TC> tcList) {
+		Session session = getSessionFactory().openSession();
+		List<Course> list = new ArrayList<>();
+		for (TC tc : tcList) {
+			Criteria criteria = session.createCriteria(Course.class);
+			criteria.add(Restrictions.eq("cid", tc.getCid()));
+			Course course = (Course) criteria.uniqueResult();
+			list.add(course);
 		}
 		return list;
 	}

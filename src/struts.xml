@@ -42,8 +42,19 @@
 			</result>
 			<result name="toEdit" >editStudent.jsp</result>
 		</action>
+		<!-- 选课 -->
 		<action name="courseSelectAction_*" class="courseSelectAction" method="{1}">
-			<result name="toCourseSelect">courseSelect.jsp</result>
+			<result name="toCourseSelect">CourseSelect.jsp</result>
+			<result name="toAddTCourse">addTCourseSelect.jsp</result>
+			<result name="toAddSCourse">addSCourseSelect.jsp</result>
+			<result name="toTCList" type="redirectAction">
+				<param name="actionName">courseSelectAction_getAllTC</param>
+				<param name="namespace">/</param>
+			</result>
+			<result name="toSCList" type="redirectAction">
+				<param name="actionName">courseSelectAction_getAllSC</param>
+				<param name="namespace">/</param>
+			</result>
 		</action>
 	</package>
 </struts>

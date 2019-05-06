@@ -35,7 +35,7 @@
 			bgColor="#f5fafe" border="0">
 			<TBODY>
 				<tr>
-					<td class="ta_01" align="center" bgColor="#afd1f3"><strong>教师列表</strong>
+					<td class="ta_01" align="center" bgColor="#afd1f3"><strong>学生列表</strong>
 					</TD>
 				</tr>
 				<tr>

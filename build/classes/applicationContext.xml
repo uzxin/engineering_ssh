@@ -16,6 +16,14 @@
 		<property name="driverClass" value="${jdbc.driverClass}" ></property>
 		<property name="user" value="${jdbc.user}" ></property>
 		<property name="password" value="${jdbc.password}" ></property>
+		<!--初始化时获取三个连接，取值应在minPoolSize与maxPoolSize之间。Default: 3 -->
+		<property name="initialPoolSize" value="10" ></property>
+		<!--最大空闲时间,指定的时间内未使用则连接被丢弃。若为0则永不丢弃。Default: 0 -->
+   		<property name="maxIdleTime" value="30" ></property>
+   		<!--连接池中保留的最大连接数。Default: 15 -->
+    	<property name="maxPoolSize" value="100" ></property>
+    	 <!-- 连接池中最小连接数，default: 3 -->  
+   		<property name="minPoolSize" value="10" ></property>
 	</bean>
 	<!-- 开启注解事务 -->
 	<tx:annotation-driven transaction-manager="transactionManager" />
@@ -83,6 +91,9 @@
 		<property name="sf" ref="sessionFactory" ></property>
 		<property name="scDao" ref="scDao"></property>
 		<property name="tcDao" ref="tcDao"></property>
+		<property name="studentDao" ref="studentDao"></property>
+		<property name="teacherDao" ref="teacherDao"></property>
+		<property name="courseDao" ref="courseDao"></property>
 	</bean>
 	
 	
